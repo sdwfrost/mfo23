@@ -1,2 +1,2 @@
 # mfo23
-Talk for Oberwolfach 2023
+Talk at MFO, February 2023

@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>index.knit</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="index_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="styles.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="index_files/header-attrs-2.18/header-attrs.js"></script>
+    <link href="index_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="index_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level2">
+
+<style type="text/css">
+code.r{ /* Code block */
+    font-size: 28px;
+}
+code.julia{ /* Code block */
+    font-size: 28px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 32px;
+}
+</style>
+</section>
+<section id="section" class="slide level2" data-background="#d3d3d3">
+<h2 data-background="#d3d3d3"></h2>
+<h2 style="color:#0047AB">
+Open science approaches to the mathematical modeling of infectious
+disease
+</h2>
+<br>
+<h3 style="color:#000000">
+Simon Frost
+</h3>
+<h4 style="color:#000000">
+Principal Data Scientist, Microsoft &amp;
+</h4>
+<h4 style="color:#000000">
+Professor of Pathogen Dynamics, LSHTM
+</h4>
+<p><img height="100px" style="border:0px;" src="img/msft.jpg">
+<img height="100px" style="border:0px;" src="img/lshtm.jpg"></p>
+<h2>
+<span
+style="font-size:24px"><img height="25px" src="img/outlook.jpg" style="background:none; border:none; box-shadow:none; vertical-align:middle"/>
+ <a href="mailto:sdwfrost@microsoft.com" target="_blank" style="vertical-align:middle">sdwfrost@microsoft.com</a></span>
+<span
+style="font-size:24px"><img height="25px" src="img/twitter-icon.png" style="background:none; border:none; box-shadow:none; vertical-align:middle"/>
+ <a href="http://www.twitter.com/sdwfrost" target="_blank" style="vertical-align:middle"><span
+class="citation" data-cites="sdwfrost">@sdwfrost</span></a></span> <span
+style="font-size:24px"><img height="25px" src="img/GitHub-Mark-32px.png" style="background:none; border:none; box-shadow:none; vertical-align:middle"/>
+ <a href="http://github.com/sdwfrost" target="_blank" style="vertical-align:middle">http://github.com/sdwfrost</a></span>
+</h2>
+</section>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li>Three parts:
+<ul>
+<li>Models: making models easier to understand and modify</li>
+<li>Code: making models easier to run</li>
+<li>Platforms: empowering models with compute and data</li>
+</ul></li>
+<li>An open science approach can help with all the above</li>
+</ul>
+</section>
+<section id="modeling-applications" class="slide level2">
+<h2>Modeling applications</h2>
+<ul>
+<li>We want to be able to use our Premonition platform to feed sensor
+data into models</li>
+<li>We’d also like to learn from models e.g. for decision support</li>
+<li>We’re also a small team, and can’t make models all the time</li>
+<li>We need to use ‘third party’ models for our projects
+<ul>
+<li>West Nile Virus in Harris County, Texas</li>
+<li>Malaria in Tanzania</li>
+<li>Lymphatic filariasis in Nepal</li>
+<li>River blindness in Nigeria</li>
+<li>Lassa fever in Nigeria</li>
+</ul></li>
+<li>Complex, climate-sensitive models</li>
+</ul>
+</section>
+<section id="issues-with-using-models" class="slide level2">
+<h2>Issues with using models</h2>
+<ul>
+<li>They may not consider the compartments you need or the data you
+have</li>
+<li>They may be difficult to understand</li>
+<li>The written description may be incomplete</li>
+<li>The code, if available, may be difficult to install</li>
+<li>Each model takes different inputs and outputs</li>
+</ul>
+</section>
+<section id="fair-principles-of-open-science" class="slide level2">
+<h2>FAIR principles of open science</h2>
+<ul>
+<li><strong>F</strong>indable, <strong>A</strong>ccessible,
+<strong>I</strong>nteroperable, <strong>R</strong>eproducible</li>
+<li>Models often do not adhere to FAIR principles</li>
+<li>I’ll discuss how we might go about changing this</li>
+<li>Associated scientific benefits beyond openness</li>
+</ul>
+</section>
+<section id="formulating-models" class="slide level2">
+<h2>Formulating models</h2>
+<ul>
+<li>The way we formulate models can make it easier for others to build
+upon</li>
+<li>A compatible modeling approach</li>
+<li>The ability to comprehend the model</li>
+<li>The ability to extend the model
+<ul>
+<li>The states considered in the model</li>
+<li>The method used for inference</li>
+</ul></li>
+</ul>
+</section>
+<section id="processes-not-states" class="slide level2">
+<h2>Processes, not states</h2>
+<ul>
+<li>Our primary focus in compartmental models is the compartments rather
+than the transitions</li>
+<li>By modeling the transitions, we can easily shift between ODEs, SDEs,
+and jump processes
+<ul>
+<li>Reaction networks in chemistry</li>
+<li>Petri nets</li>
+</ul></li>
+</ul>
+</section>
+<section id="stochastic-petri-net" class="slide level2">
+<h2>Stochastic petri net</h2>
+<p><span class="math display">\[
+\begin{array}{lllll}
+                            \rm{Transition}  &amp; \Delta I &amp;
+\rm{Rate} \cr \hline
+                    S + I \rightarrow I+I &amp;  +1 &amp; \lambda I \cr
+                    I \rightarrow R  &amp; -1 &amp; \mu I \cr
+                    \end{array}
+\]</span></p>
+<p><img data-src="img/pn_algebraicpetri_7_1.svg"
+style="width:80.0%" /></p>
+<ul>
+<li>Transitions: orange squares</li>
+<li>States: blue circles</li>
+</ul>
+</section>
+<section id="odes-and-jump-processes" class="slide level2">
+<h2>ODEs and jump processes</h2>
+<ul>
+<li>With the model formulated as transitions, we can easily convert into
+ODEs, SDEs, and jump processes</li>
+<li>Example can be found <a
+href="https://github.com/epirecipes/sir-julia/blob/master/markdown/pn_petri/pn_petri.md">here</a></li>
+</ul>
+<div class="left">
+<p>ODE</p>
+<p><img data-src="img/pn_petri_8_1.png" /></p>
+</div>
+<div class="right">
+<p>Jump process</p>
+<p><img data-src="img/pn_petri_10_1.png" /></p>
+</div>
+</section>
+<section id="moment-closure" class="slide level2">
+<h2>Moment closure</h2>
+<ul>
+<li>Another benefit is to automate moment closure</li>
+<li>Code is <a
+href="https://github.com/epirecipes/sir-julia/blob/master/markdown/momentclosure/momentclosure.md">here</a></li>
+</ul>
+<p><img data-src="img/momentclosure_18_1.png" style="width:80.0%" /></p>
+</section>
+<section id="finite-state-projection-of-the-master-equation"
+class="slide level2">
+<h2>Finite state projection of the master equation</h2>
+<ul>
+<li>Code is <a
+href="https://github.com/epirecipes/sir-julia/blob/master/markdown/ode_fsp/ode_fsp.md">here</a></li>
+</ul>
+<p><img data-src="img/ode_fsp_10_1.png" style="width:80.0%" /></p>
+</section>
+<section id="retrofitting-models-with-phylodynamics"
+class="slide level2">
+<h2>Retrofitting models with phylodynamics</h2>
+<ul>
+<li>To be able to incorporate phylogenetics into our models, we need to:
+<ul>
+<li>Take a process based approach</li>
+<li>Divide processes into:
+<ul>
+<li>Birth</li>
+<li>Death</li>
+<li>Migration</li>
+<li>Sampling</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="expanding-the-state-space" class="slide level2">
+<h2>Expanding the state space</h2>
+<ul>
+<li>Can make non-Markovian models easier to simulate</li>
+<li>Can more closely link models with observables
+<ul>
+<li>We don’t directly observe the contact network or the transmission
+network</li>
+</ul></li>
+</ul>
+</section>
+<section id="state-expansion-in-phylodynamic-models"
+class="slide level2">
+<h2>State expansion in phylodynamic models</h2>
+<ul>
+<li>Number of lineages over time</li>
+<li>Clustering statistics</li>
+<li>Tree shape statistics</li>
+<li>Parsimonious counts of migrations in structured models</li>
+</ul>
+</section>
+<section id="counting-infections" class="slide level2">
+<h2>Counting infections</h2>
+<ul>
+<li>Counting reinfections in SIS models
+<ul>
+<li>Can account for high reinfection vs. first infection in
+gonorrhoea</li>
+</ul></li>
+<li>Counting infectees to capture ‘superspreaders’</li>
+</ul>
+<p><span class="math display">\[
+\begin{align}
+     \frac{dS}{dt} &amp; = -\beta S \Sigma_i I_i\cr
+     \frac{dI_1}{dt} &amp; = \beta S \Sigma_i I_i - \gamma I_1 - \beta S
+I_1\cr
+     \frac{dI_i}{dt} &amp; = \beta S I_{i-1} - \gamma I_i - \beta S
+I_i\cr
+     \frac{dI_N}{dt} &amp; = \beta S I_{N-1} - \gamma I_N\cr
+\end{align}
+\]</span></p>
+</section>
+<section id="degree-distribution-is-geometric" class="slide level2">
+<h2>Degree distribution is geometric</h2>
+<ul>
+<li>Half of individuals at any one time have not (yet) infected
+anyone</li>
+</ul>
+<p><img data-src="img/si2r_frequency.png" style="width:80.0%" /></p>
+</section>
+<section id="dealing-with-increased-complexity" class="slide level2">
+<h2>Dealing with increased complexity</h2>
+<ul>
+<li>An argument against increasing the state space is the increased
+complexity of the models
+<ul>
+<li>Easier to make mistakes, which may go unnoticed by someone using the
+model</li>
+<li>Harder to understand, and hence to re-use</li>
+</ul></li>
+<li>Possible remedies
+<ul>
+<li>Use domain specific languages (DSLs)</li>
+<li>Exploit composability</li>
+</ul></li>
+</ul>
+</section>
+<section id="using-dsls" class="slide level2">
+<h2>Using DSLs</h2>
+<div class="left">
+<ul>
+<li>R
+<ul>
+<li><code>odin</code></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">deriv</span>(S) <span class="ot">&lt;-</span> <span class="sc">-</span>beta<span class="sc">*</span>S<span class="sc">*</span>I</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">deriv</span>(I) <span class="ot">&lt;-</span> beta<span class="sc">*</span>S<span class="sc">*</span>I <span class="sc">-</span> gamma<span class="sc">*</span>I</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">deriv</span>(R) <span class="ot">&lt;-</span> gamma<span class="sc">*</span>I</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">initial</span>(S) <span class="ot">&lt;-</span> <span class="fl">0.99</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">initial</span>(I) <span class="ot">&lt;-</span> <span class="fl">0.01</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">initial</span>(R) <span class="ot">&lt;-</span> <span class="fl">0.00</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>beta <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>gamma <span class="ot">&lt;-</span> <span class="fl">0.25</span></span></code></pre></div>
+</div>
+<div class="right">
+<ul>
+<li>Julia
+<ul>
+<li><code>ModelingToolkit.jl</code></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@parameters</span> t β γ</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@variables</span> <span class="fu">S</span>(t) <span class="fu">I</span>(t)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="fu">Differential</span>(t)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>eqs <span class="op">=</span> [<span class="fu">D</span>(S) <span class="op">~</span> <span class="op">-</span>β<span class="op">*</span>S<span class="op">*</span>I,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">D</span>(I) <span class="op">~</span> β<span class="op">*</span>S<span class="op">*</span>I<span class="op">-</span>γ<span class="op">*</span>I]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>u0 <span class="op">=</span> [S <span class="op">=&gt;</span> <span class="fl">990.0</span>, I <span class="op">=&gt;</span> <span class="fl">10.0</span>]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> [β <span class="op">=&gt;</span> <span class="fl">0.5</span>, γ <span class="op">=&gt;</span> <span class="fl">0.25</span>]</span></code></pre></div>
+</div>
+</section>
+<section id="linear-chain-trick" class="slide level2">
+<h2>Linear chain trick</h2>
+<ul>
+<li>Code is <a
+href="https://github.com/epirecipes/sir-julia/blob/master/markdown/ode_stages/ode_stages.md">here</a></li>
+</ul>
+<p><large></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> <span class="fl">4</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@parameters</span> t β δ</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@variables</span> <span class="fu">S</span>(t) (<span class="fu">I</span>(t))[<span class="fl">1</span><span class="op">:</span>K]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>D<span class="op">=</span><span class="fu">Differential</span>(t)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ΣI<span class="op">=</span><span class="fu">sum</span>(I[<span class="fl">1</span><span class="op">:</span>K])</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>eqs<span class="op">=</span>[<span class="fu">D</span>(S)    <span class="op">~</span> <span class="op">-</span>β<span class="op">*</span>ΣI<span class="op">*</span>S,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>     <span class="fu">D</span>(I[<span class="fl">1</span>]) <span class="op">~</span>  β<span class="op">*</span>ΣI<span class="op">*</span>S<span class="op">-</span>δ<span class="op">*</span>I[<span class="fl">1</span>],</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    [<span class="fu">D</span>(I[i]) <span class="op">~</span>  δ<span class="op">*</span>I[i<span class="op">-</span><span class="fl">1</span>]<span class="op">-</span>δ<span class="op">*</span>I[i] for i <span class="kw">in</span> <span class="fl">2</span><span class="op">:</span>K]<span class="op">...</span>]</span></code></pre></div>
+<p></large></p>
+</section>
+<section id="an-age-structured-pde" class="slide level2">
+<h2>An age-structured PDE</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Dt <span class="op">=</span> <span class="fu">Differential</span>(t)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Da <span class="op">=</span> <span class="fu">Differential</span>(a)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>∫a <span class="op">=</span> <span class="fu">Integral</span>(a <span class="kw">in</span> <span class="fu">ClosedInterval</span>(<span class="fl">0</span>,A))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>[<span class="fu">Dt</span>(<span class="fu">S</span>(a,t))<span class="fu">+Da</span>(<span class="fu">S</span>(a,t)) <span class="op">~</span> <span class="fu">-β*S</span>(a,t)<span class="fu">*∫a</span>(<span class="fu">I</span>(a,t)),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">Dt</span>(<span class="fu">I</span>(a,t))<span class="fu">+Da</span>(<span class="fu">I</span>(a,t)) <span class="op">~</span>  <span class="fu">β*S</span>(a,t)<span class="fu">*∫a</span>(<span class="fu">I</span>(a,t))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">-γ*I</span>(a,t)]</span></code></pre></div>
+</section>
+<section id="composability" class="slide level2">
+<h2>Composability</h2>
+<ul>
+<li>Another way to make complex models easier to understand is to
+compose them from smaller submodels</li>
+<li>Causal approaches: Outputs from one model are linked to inputs of
+another
+<ul>
+<li>Volz coalescent models</li>
+<li>Mick Roberts’ ODE/map</li>
+</ul></li>
+<li>Acausal: Inputs and outputs can be linked between models
+birectionally
+<ul>
+<li>Identify shared states between submodels</li>
+</ul></li>
+</ul>
+</section>
+<section id="an-algebraic-petri-net" class="slide level2">
+<h2>An algebraic petri net</h2>
+<p><img data-src="img/pn_algebraicpetri_4_1.svg" /> <img
+data-src="img/pn_algebraicpetri_5_1.svg" /></p>
+<p>becomes</p>
+<p><img data-src="img/pn_algebraicpetri_7_1.svg" /></p>
+<ul>
+<li>Code is <a
+href="https://github.com/epirecipes/sir-julia/blob/master/markdown/pn_algebraicpetri/pn_algebraicpetri.md">here</a></li>
+</ul>
+</section>
+<section id="using-frameworks-with-automatic-differentiation"
+class="slide level2">
+<h2>Using frameworks with automatic differentiation</h2>
+<ul>
+<li>Forward AD: Replace numbers <span class="math inline">\(x\)</span>
+with dual numbers <span class="math inline">\(x + x&#39;
+\epsilon\)</span></li>
+</ul>
+<p><img data-src="img/AutomaticDifferentiationNutshell.png" /></p>
+</section>
+<section id="simulated-sir-model" class="slide level2">
+<h2>Simulated SIR model</h2>
+<div class="left">
+<p><img data-src="img/ude_7_1.png" /></p>
+</div>
+<div class="right">
+<p><img data-src="img/ude_9_1.png" /></p>
+</div>
+</section>
+<section id="local-sensitivity" class="slide level2">
+<h2>Local sensitivity</h2>
+<ul>
+<li>AD allows us to examine the sensitivity of trajectories to changes
+in parameters (code <a
+href="https://github.com/epirecipes/sir-julia/blob/master/markdown/ode_local_sensitivity/ode_local_sensitivity.md">here</a>)</li>
+</ul>
+<p><img data-src="img/ode_local_sensitivity_12_1.png" /></p>
+</section>
+<section id="hmcno-u-turn-sampler" class="slide level2">
+<h2>HMC/No U-Turn Sampler</h2>
+<ul>
+<li>We can also use efficient MCMC samplers such as NUTS if we have
+gradients via AD (code <a
+href="https://github.com/epirecipes/sir-julia/blob/master/markdown/ode_turing/ode_turing.md">here</a>)</li>
+</ul>
+<p><img data-src="img/ode_turing_12_1.png" /></p>
+</section>
+<section id="neural-networks" class="slide level2">
+<h2>Neural networks</h2>
+<ul>
+<li>Model neural network platforms rely on automatic
+differentiation</li>
+<li>Neural networks have found their way into the differential equation
+space and vice versa
+<ul>
+<li>Using differential equations to create infinitely-deep neural
+networks</li>
+<li>Learn the differential operator</li>
+<li>To build semiparametric models</li>
+</ul></li>
+<li>‘Learn’ the force of infection without making e.g. mass action
+assumptions</li>
+</ul>
+</section>
+<section id="learning-the-force-of-infection" class="slide level2">
+<h2>Learning the force of infection</h2>
+<ul>
+<li>Replace <span class="math inline">\(\lambda(t) = \beta I(t)\)</span>
+with <span class="math inline">\(\lambda(t) = f(I(t))\)</span> where
+<code>f</code> is a neural network.</li>
+<li>Multiple advantages with replacing state-dependent terms rather than
+time-dependent terms (code <a
+href="https://github.com/epirecipes/sir-julia/blob/master/markdown/ude/ude.md">here</a>)</li>
+</ul>
+<p><img data-src="img/ude_28_1.png" /></p>
+</section>
+<section id="using-other-peoples-models" class="slide level2">
+<h2>Using other peoples models</h2>
+<ul>
+<li>In many cases, models may be too much work to re-implement
+<ul>
+<li>We can still compose models using a causal approach</li>
+</ul></li>
+<li>At the very least, we should be able to reproduce the results of a
+model if we have the code</li>
+<li>To make models useful, we need to be able to run the models
+e.g. with different parameter sets</li>
+</ul>
+</section>
+<section id="making-models-reproducible" class="slide level2">
+<h2>Making models reproducible</h2>
+<ul>
+<li>Papers often omit details of the model, but even if they include all
+the equations, there can be problems</li>
+</ul>
+<p><span class="math display">\[
+\begin{align*}
+\dfrac{\mathrm dS}{\mathrm dt} &amp;= -\frac{\beta c S I}{N}, \\
+\dfrac{\mathrm dI}{\mathrm dt} &amp;= \frac{\beta c S I}{N} - \gamma
+I,\\
+\dfrac{\mathrm dR}{\mathrm dt} &amp;= \gamma I, \\
+S(t) + I(t) + R(t) &amp;= N \\
+S(0) = 990, I(0) = 10, R(0) &amp;= 0 \\
+\beta=0.05, c=10, \gamma &amp;= 0.25
+\end{align*}
+\]</span></p>
+</section>
+<section id="why-is-this-not-enough-for-numerical-work"
+class="slide level2">
+<h2>Why is this not enough for numerical work?</h2>
+<ul>
+<li>What numerical precision was used?</li>
+<li>Which solver was used?</li>
+<li>These problems are even more acute with more complex models
+<ul>
+<li>PDEs: which numerical scheme?</li>
+<li>Agent based models</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-importance-of-preservation" class="slide level2">
+<h2>The importance of preservation</h2>
+<p><img data-src="img/solver.png" style="width:80.0%" /></p>
+</section>
+<section id="the-importance-of-versioning" class="slide level2">
+<h2>The importance of versioning</h2>
+<p><img data-src="img/ihme.jpg" style="width:90.0%" /></p>
+</section>
+<section id="packaging-the-models-in-containers" class="slide level2">
+<h2>Packaging the models in ‘containers’</h2>
+<ul>
+<li>A container is like a lightweight ‘virtual machine’</li>
+<li>You can bundle all the code and dependencies (and even data) that a
+model needs to run
+<ul>
+<li>Portable(ish)</li>
+<li>Reproducible</li>
+<li>Versioned</li>
+<li>Makes it easier to run models remotely</li>
+</ul></li>
+<li>‘Full’ packaging can be difficult when commercial packages (Matlab,
+Mathematica, Maple, etc.) are used</li>
+</ul>
+</section>
+<section id="an-example-dockerfile" class="slide level2">
+<h2>An example Dockerfile</h2>
+<pre><code>FROM python:3
+
+ARG COVASIM_VER=1.0.0
+
+RUN pip install covasim==${COVASIM_VER} pandas
+
+COPY . /app
+
+CMD [&quot;python&quot;, &quot;/app/runsim.py&quot;, &quot;/data/input/inputFile.json&quot;, &quot;/data/output/data.json&quot;]</code></pre>
+</section>
+<section id="running-the-models" class="slide level2">
+<h2>Running the models</h2>
+<ul>
+<li>JSON (Javascript Object Notation) is an open standard file format,
+and data interchange format, that uses human-readable text</li>
+<li>Schema can be used to validate</li>
+<li>Goal: Models can be run as:</li>
+</ul>
+<p><code>my_model input.json output.json</code></p>
+</section>
+<section id="an-example-input" class="slide level2">
+<h2>An example input</h2>
+<ul>
+<li>An array of parameter values, p, an array of initial conditions, u0,
+and a timespan over which to simulate</li>
+</ul>
+<pre><code> {
+    &quot;p&quot; : [0.05,10.0,0.25],
+    &quot;u0&quot; : [990.0,10.0,0.0],
+    &quot;tspan&quot; : [0.0,40.0]
+}</code></pre>
+</section>
+<section id="a-better-input" class="slide level2">
+<h2>A better input</h2>
+<pre><code> {
+    &quot;p&quot; : {&quot;b&quot;: 0.05, &quot;c&quot;: 10.0, &quot;g&quot;: 0.25},
+    &quot;u0&quot; : {&quot;S&quot;: 990.0, &quot;I&quot;: 10.0, &quot;R&quot;: 0.0},
+    &quot;tspan&quot; : {&quot;tmin&quot;, 0.0, &quot;tmax&quot;: 40.0, &quot;dt&quot;: 0.1}
+}</code></pre>
+</section>
+<section id="making-application-programming-interfaces-apis-to-models"
+class="slide level2">
+<h2>Making application programming interfaces (APIs) to models</h2>
+<ul>
+<li>Use default parameters (can use multiple endpoints for different
+scenarios):
+<ul>
+<li><code>"/run_default"</code></li>
+</ul></li>
+<li>Using a path:
+<ul>
+<li><code>"/run_path/{b}/{g}/{S0}/{I0}/{R0}/{t0}/{tmax}/{dt}"</code></li>
+</ul></li>
+<li>Using JSON formatted data</li>
+<li>Modern tools allow you to add interfaces to your models with as
+little as 1-2 extra lines of code</li>
+</ul>
+</section>
+<section id="webpage-input" class="slide level2">
+<h2>Webpage input</h2>
+<p><img data-src="img/swagger.png" style="width:70.0%" /></p>
+<ul>
+<li>Model runner examples are <a
+href="https://github.com/sdwfrost/model-runner-zoo">here</a></li>
+</ul>
+</section>
+<section
+id="how-do-these-open-science-approaches-make-models-more-useful"
+class="slide level2">
+<h2>How do these open science approaches make models more useful?</h2>
+<ul>
+<li>Models are often developed in isolation
+<ul>
+<li>from the data</li>
+<li>from those who may use the models e.g. in decision making</li>
+</ul></li>
+<li>Approach
+<ul>
+<li>Provide a cloud compute platform to run models</li>
+<li>Provide a data platform to assist epidemiological models</li>
+<li>Work with stakeholders to build useful dashboards</li>
+</ul></li>
+</ul>
+</section>
+<section id="model-runner-background" class="slide level2">
+<h2>Model runner background</h2>
+<ul>
+<li>Engineers at GitHub and Microsoft helped to open-source the code for
+Neil Ferguson’s covidsim</li>
+<li>Involved code review by John Cormack (founder Id Software, former
+CTO of Oculus)</li>
+<li>Refactored the code, containerized it, allowing it to be run in the
+cloud (Microsoft Azure)</li>
+<li>In parallel, engineers at GitHub developed a model runner and a
+front-end to run multiple COVID models
+<ul>
+<li>covidsim, covasim (IDM), covid19-scenarios (Richard Neher), MC19
+(Stripe/Harvard)</li>
+</ul></li>
+</ul>
+</section>
+<section id="imperials-covidsim" class="slide level2"
+data-background="#000000">
+<h2 data-background="#000000">Imperial’s Covidsim</h2>
+<p><img data-src="img/covidsimwarning.png" /></p>
+</section>
+<section id="model-runner-architecture" class="slide level2">
+<h2>Model runner architecture</h2>
+<p><img data-src="img/ui.png" /></p>
+</section>
+<section id="front-end" class="slide level2">
+<h2>Front end</h2>
+<p><img data-src="img/screenshot_output.png" /></p>
+</section>
+<section id="issues" class="slide level2">
+<h2>Issues</h2>
+<ul>
+<li>Models didn’t have an existing web API, so connectors had to be
+built</li>
+<li>Models may have little overlap in inputs and/or outputs</li>
+<li>Development shifted to just making a web API to schedule and
+retrieve model runs</li>
+</ul>
+</section>
+<section id="the-sentinel-project" class="slide level2">
+<h2>The Sentinel Project</h2>
+<ul>
+<li>Project that brings together modellers in the UK with the Nigerian
+CDC and ACEGID</li>
+<li>Can we support decisions on Lassa fever surveillance through
+automated running of models on epidemiological data?</li>
+<li>What is the value of viral sequence information?</li>
+<li>How can we streamline data collection so that it is more accurate
+and complete?</li>
+</ul>
+</section>
+<section id="lassa-fever-in-nigeria" class="slide level2">
+<h2>Lassa fever in Nigeria</h2>
+<p><img data-src="img/ncdc_tableau.png" style="width:70.0%" /></p>
+</section>
+<section id="forecasting-lassa-fever-in-nigeria" class="slide level2">
+<h2>Forecasting Lassa fever in Nigeria</h2>
+<ul>
+<li>We’ve packaged the statistical model from Redding et al. (2021)</li>
+<li>Spatiotemporal model implemented using R-INLA
+<ul>
+<li>Outcome: number of cases offset by population size</li>
+<li>Predictors:
+<ul>
+<li>RW1 on year</li>
+<li>Cyclic RW2 on week</li>
+<li>RW2 on SPI (lagged by 120d)</li>
+<li>RW2 on precipitation (lagged by 60d)</li>
+<li>Spatial autocorrelation</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="forecasts" class="slide level2">
+<h2>Forecasts</h2>
+<p><img data-src="img/forecastplot_latest.png"
+style="width:90.0%" /></p>
+</section>
+<section id="musa-et-al.-2020-lassa-fever-model" class="slide level2">
+<h2>Musa et al. (2020) Lassa fever model</h2>
+<p><img data-src="img/musa_model.png" style="width:80.0%" /></p>
+</section>
+<section id="fitted-force-of-infections" class="slide level2">
+<h2>Fitted force of infections</h2>
+<p><img data-src="img/musa_model2.png" style="width:90.0%" /></p>
+</section>
+<section id="next-steps" class="slide level2">
+<h2>Next steps</h2>
+<ul>
+<li>What information is useful to the Nigerian CDC?</li>
+<li>How can sensitivity analysis be done interactively?</li>
+<li>How can we extend to other diseases?</li>
+</ul>
+</section>
+<section id="the-computing-the-biome-project" class="slide level2">
+<h2>The Computing the Biome project</h2>
+<ul>
+<li>Public-private partnership funded by the NSF to study how real-time
+vector surveillance using Microsoft Premonition devices can empower
+vector control of West Nile virus in Harris County, Texas
+<ul>
+<li>Integrate existing data with public datasets</li>
+<li>Generate sequence data from mosquito samples</li>
+<li>Add real time mosquito data and weather data</li>
+<li>Build models</li>
+<li>Feed results back to interested parties</li>
+</ul></li>
+</ul>
+</section>
+<section id="where-to-put-our-devices" class="slide level2">
+<h2>Where to put our devices?</h2>
+<ul>
+<li>Treating our traps as a limited resource, where should we place our
+devices?</li>
+<li>Developing adaptive sampling protocols in order to guide the
+logistics of moving traps around</li>
+<li>Very outcome-dependent</li>
+<li>For Harris County, we have historical data going back to 2006 on
+weekly trapping counts and West Nile Virus results on pooled mosquitoes
+<ul>
+<li>Provide short term forecasts using data-driven models</li>
+<li>Long term scenarios/projections using mechanistic models</li>
+</ul></li>
+</ul>
+</section>
+<section id="spatial-patterns-in-harris-county" class="slide level2">
+<h2>Spatial patterns in Harris County</h2>
+<p><img data-src="img/wnv.png" style="width:90.0%" /></p>
+</section>
+<section id="an-exemplar-data-ecosystem" class="slide level2">
+<h2>An exemplar data ecosystem</h2>
+<ul>
+<li>As part of the Computing the Biome project, we will provide a
+snapshot of our data lake
+<ul>
+<li>Mosquito and vector control data (from Harris County Public
+Health)</li>
+<li>High-resolution climate data (from Tomorrow.io)</li>
+<li>Data from our biological weather stations (from MSFT)</li>
+<li>Integrated with other public datasets
+<ul>
+<li>Human population data</li>
+<li>Social vulnerability data</li>
+<li>Land use data</li>
+<li>LIDAR data</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="models" class="slide level2">
+<h2>Models</h2>
+<ul>
+<li>We’re working with David Smith and Sean Wu (UW IHME) to integrate
+their models into our architecture</li>
+<li>MicroMoB
+<ul>
+<li>Discrete time, deterministic or stochastic model for mosquito
+density and vector-borne disease</li>
+</ul></li>
+<li>exDE
+<ul>
+<li>Continuous time, differential equation based framework for mosquito
+density and vector-borne disease</li>
+</ul></li>
+<li>MBITES
+<ul>
+<li>Individual-based model for patterns of daily activity</li>
+</ul></li>
+</ul>
+</section>
+<section id="exde-framework" class="slide level2">
+<h2>exDE framework</h2>
+<p><img data-src="img/exde.png" style="width:80.0%" /></p>
+</section>
+<section id="linking-vector-control-and-weather-to-mosquito-models"
+class="slide level2">
+<h2>Linking vector control and weather to mosquito models</h2>
+<p><img data-src="img/exde2.png" style="width:50.0%" /></p>
+</section>
+<section id="finding-models" class="slide level2">
+<h2>Finding models</h2>
+<ul>
+<li>I’ve spoken about Accessibility, Interoperability, and
+Reproducibility
+<ul>
+<li>What about Findability?</li>
+</ul></li>
+<li>Implementations that are hard to find
+<ul>
+<li>Age of infection models</li>
+<li>Age structured models</li>
+<li>Size structured models</li>
+</ul></li>
+</ul>
+</section>
+<section id="epirecipes" class="slide level2">
+<h2>Epirecipes</h2>
+<ul>
+<li>Started when I was a Turing Fellow at The Alan Turing Institute</li>
+<li>Aims:
+<ul>
+<li>Code as many models and techniques in as many computer languages as
+possible</li>
+<li>Provide a zero-install way to try out these models</li>
+</ul></li>
+<li>Current development
+<ul>
+<li>Illustrate as many techniques applied to a simple SIR type
+system</li>
+<li>Coded primarily in Julia</li>
+</ul></li>
+</ul>
+</section>
+<section id="demos-include" class="slide level2">
+<h2>Demos include…</h2>
+<ul>
+<li>Different frameworks:
+<ul>
+<li>ODEs, DDEs, SDEs, jump processes, maps, Markov models, agent based
+models, discrete event simulations</li>
+</ul></li>
+<li>Inference (mostly for ODEs)
+<ul>
+<li>MCMC, nested sampling, ML through optimization, ABC</li>
+</ul></li>
+<li>Composition</li>
+<li>Surrogate models</li>
+<li>Uncertainty quantification</li>
+<li>Miscellaneous
+<ul>
+<li>Adomian polynomials, fractional differential equations</li>
+</ul></li>
+</ul>
+</section>
+<section id="things-that-help-promote-model-re-use"
+class="slide level2">
+<h2>Things that help promote model re-use</h2>
+<ul>
+<li>Think about modeling in terms of processes rather than states</li>
+<li>Simplify the model description using domain specific languages</li>
+<li>Make the model composable so the model building process is
+evident</li>
+<li>Provide parameter ranges and default scenarios</li>
+<li>Package the model with self-documenting inputs and outputs</li>
+</ul>
+</section>
+<section id="conclusions" class="slide level2">
+<h2>Conclusions</h2>
+<ul>
+<li>I’ve tried to promote an open science approach to numerical methods
+in epidemiological modeling</li>
+<li>Potential benefits
+<ul>
+<li>Citations! Fame!</li>
+<li>Others can verify and build on your work</li>
+<li>Development of data and compute platforms that may help your
+models</li>
+</ul></li>
+<li>Modern computational tools lessen the burden of adopting these
+practices</li>
+<li>Let me know if you want a reference implementation of your
+approach</li>
+</ul>
+</section>
+<section id="links" class="slide level2">
+<h2>Links</h2>
+<ul>
+<li>Microsoft Premonition
+<ul>
+<li><a
+href="https://microsoft.com/premonition">https://microsoft.com/premonition</a></li>
+</ul></li>
+<li>Epirecipes
+<ul>
+<li><a href="http://epirecip.es">http://epirecip.es</a> (old site)</li>
+<li><a
+href="http://github.com/epirecipes/sir-julia">http://github.com/epirecipes/sir-julia</a></li>
+</ul></li>
+<li>APIs/COVID Model Runner
+<ul>
+<li><a
+href="https://covid-policy-modelling.github.io/">https://covid-policy-modelling.github.io/</a></li>
+<li><a
+href="https://github.com/sdwfrost/model-runner-zoo">https://github.com/sdwfrost/model-runner-zoo</a></li>
+</ul></li>
+<li>Mosquito modeling
+<ul>
+<li>exDE: <a
+href="https://github.com/dd-harp/exde">https://github.com/dd-harp/exde</a></li>
+<li>MicroMoB: <a
+href="https://github.com/dd-harp/MicroMoB">https://github.com/dd-harp/MicroMoB</a></li>
+<li>MBITES: <a
+href="https://github.com/dd-harp/MBITES">https://github.com/dd-harp/MBITES</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks!</h2>
+<h2>
+<span
+style="font-size:24px"><img src="img/outlook.png" style="background:none; border:none; box-shadow:none; vertical-align:middle"/>
+ <a href="mailto:sdwfrost@microsoft.com" target="_blank" style="vertical-align:middle">sdwfrost@microsoft.com</a></span>
+<span
+style="font-size:24px"><img src="img/twitter-icon.png" style="background:none; border:none; box-shadow:none; vertical-align:middle"/>
+ <a href="http://www.twitter.com/sdwfrost" target="_blank" style="vertical-align:middle"><span
+class="citation" data-cites="sdwfrost">@sdwfrost</span></a></span> <span
+style="font-size:24px"><img src="img/GitHub-Mark-32px.png" style="background:none; border:none; box-shadow:none; vertical-align:middle"/>
+ <a href="http://github.com/sdwfrost" target="_blank" style="vertical-align:middle">http://github.com/sdwfrost</a></span>
+</h2>
+</section>
+    </div>
+  </div>
+
+  <script src="index_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="index_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: false,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+
+
+        chalkboard: {
+        },
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'index_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+          { src: 'index_files/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "index_files/mathjax-local/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
